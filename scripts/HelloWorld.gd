@@ -1,4 +1,5 @@
 extends Control
 
+
 func _ready():
-	print("")
+	print("Hello World")
