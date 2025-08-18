@@ -8,4 +8,4 @@ https://drive.google.com/file/d/1i-5kZxfHNTGs71k-h6hd-Cb8Ha5TQO1w/view?usp=shari
 
 ## Curso
 
-[... Está vindo, em breve ...]
+[## Playlist](https://www.youtube.com/watch?v=HPa2570gLL8&list=PLpaWU9Qk4Oc9FeN4yjwY4AbZe0PmWwOBX)
