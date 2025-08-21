@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GDScript Essentials"
-run/main_scene="uid://dsshxfxo3dg7q"
+run/main_scene="uid://10bn1rorw7lx"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
