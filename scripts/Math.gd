@@ -13,8 +13,8 @@ func _ready():
 	var multiply = n1 * n2
 	print("A multiplicação é: ", str(n1), " * ", str(n2), "é: ", str(multiply))
 	
-	var division = n1 / n2
-	print("A divisão de ", str(n1), " / ", str(n2), " é igual a: ", str(division))
+	var division = float(n1) / float(n2)
+	print("A divisão de ", str(n1), " / ", str(n2), " é igual a: ", str(float(division)))
 	
 	var rest = 10 % 2
 	print("Resto da divisão de 10 por 2: ", rest)
@@ -22,7 +22,6 @@ func _ready():
 	var pow = n1 ** n2
 	print(str(n1), " elevado a ", str(n2), " é: ", pow) # 2 * 2 * 2 = 8
 	
-	
-	
-	
-	
+	# test 
+	var result = (1 + 4) * (7 - 1) / 2 + 10
+	print(result)
