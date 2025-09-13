@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://bas8vkfa8igct"]
+
+[ext_resource type="Script" uid="uid://bb8d7yknglman" path="res://scripts/Player.gd" id="1_kqs1s"]
+[ext_resource type="Texture2D" uid="uid://c6euof2kkyv21" path="res://sky_linekotsi_04_HDRI.hdr" id="2_32lhk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kqs1s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_32lhk"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7g83o"]
+panorama = ExtResource("2_32lhk")
+
+[sub_resource type="Sky" id="Sky_d1c63"]
+sky_material = SubResource("PanoramaSkyMaterial_7g83o")
+
+[sub_resource type="Environment" id="Environment_1lgw5"]
+background_mode = 2
+sky = SubResource("Sky_d1c63")
+
+[node name="World" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_kqs1s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_kqs1s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_32lhk")
+
+[node name="CameraPivot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0993414, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraPivot"]
+spring_length = 7.0
+margin = 1.13
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot/SpringArm3D"]
+
+[node name="Platforms" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10595703, -0.499215, 0.91430664)
+use_collision = true
+size = Vector3(5, 1, 5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10595703, 2.0626054, -11.360958)
+use_collision = true
+size = Vector3(5, 1, 5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10595703, 0.500785, -5.360958)
+use_collision = true
+size = Vector3(5, 1, 5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1lgw5")
