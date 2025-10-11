@@ -14,7 +14,6 @@ var min_pitch = -90
 var max_pitch = 90
 
 @onready var camera_pivot = $CameraPivot
-@onready var camera = $CameraPivot/SpringArm3D/Camera/Camera3D
 
 
 func _ready():
